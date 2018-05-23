@@ -27,7 +27,7 @@ namespace EFCore.Test
         {
             var sqlConnectionStringBuilder = new SqlConnectionStringBuilder
             {
-                DataSource = "192.168.10.226",
+                DataSource = "10.0.2.229",
                 InitialCatalog = "Northwind_Test",
                 UserID = "sa",
                 Password = "w1!"
@@ -120,7 +120,8 @@ namespace EFCore.Test
 
         public int DetailId { get; set; }
 
-        public int? OrderID { get; set; }
+        public int? OrderID { get;
+            set; }
         public int ProductID { get; set; }
  
 

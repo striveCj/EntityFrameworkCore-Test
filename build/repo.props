@@ -1,0 +1,23 @@
+<Project>
+  <Import Project="dependencies.props" />
+
+  <PropertyGroup>
+    <CoreOnly Condition="'$(CoreOnly)' == ''">False</CoreOnly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <DotNetCoreRuntime Include="$(MicrosoftNETCoreApp20PackageVersion)" />
+    <DotNetCoreRuntime Include="$(MicrosoftNETCoreApp21PackageVersion)" />
+
+    <ExcludeFromTest Include="$(RepositoryRoot)samples\OracleProvider\test\OracleProvider.FunctionalTests\*.csproj" />
+    <!-- DocumentDb FunctionalTests are explicitly disabled due to excessively long execution time. -->
+    <ExcludeFromTest Include="$(RepositoryRoot)test\EFCore.DocumentDb.FunctionalTests\*.csproj" />
+    <ExcludeSolutions Include="$(RepositoryRoot)EFCore.Runtime.sln" />
+  </ItemGroup>
+  <PropertyGroup>
+    <!-- These properties are use by the automation that updates dependencies.props -->
+    <LineupPackageId>Internal.AspNetCore.Universe.Lineup</LineupPackageId>
+    <LineupPackageRestoreSource>https://dotnet.myget.org/F/aspnetcore-release/api/v3/index.json</LineupPackageRestoreSource>
+  </PropertyGroup>
+
+</Project>

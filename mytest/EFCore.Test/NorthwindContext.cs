@@ -27,7 +27,7 @@ namespace EFCore.Test
         {
             var sqlConnectionStringBuilder = new SqlConnectionStringBuilder
             {
-                DataSource = "10.0.2.229",
+                DataSource = ".",
                 InitialCatalog = "Northwind_Test",
                 UserID = "sa",
                 Password = "w1!"

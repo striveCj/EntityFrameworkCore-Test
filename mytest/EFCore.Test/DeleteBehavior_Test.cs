@@ -16,6 +16,11 @@ namespace EFCore.Test
         }
 
 
+        //https://docs.microsoft.com/zh-cn/previous-versions/sql/sql-server-2005/ms186973(v%3dsql.90)
+        //https://docs.microsoft.com/zh-cn/ef/core/saving/cascade-delete
+        //https://github.com/aspnet/EntityFramework.Docs/blob/live/entity-framework/core/saving/cascade-delete.md
+        //https://github.com/aspnet/EntityFramework.Docs.zh-cn/blob/live/entity-framework/core/saving/cascade-delete.md
+
         /*
          * 如果关联实体未被跟踪，主实体的状态标记为删除，执行SaveChage时，通过数据库的行为删除关联的数据行；
          * 如果关联实体已经被跟踪，将主实体的状态标记为删除时，关联将实体的状态也会标记为删除，执行SaveChange时，先删除关联实体，然后删除主实体；
